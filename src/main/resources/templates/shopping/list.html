@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>首页</title>
+  <!-- 新 Bootstrap 核心 CSS 文件 -->
+  <link rel="stylesheet" href="../../../css/bootstrap.min.css">
+  <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+  <script src="../../../js/jquery.min.js"></script>
+  <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+  <script src="../../../js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<div style="padding:0px; margin:0px;">
+  <ul class="breadcrumb" style="  margin:0px; " >
+    <li><a href="#">订单管理</a></li>
+    <li>查看商品</li>
+  </ul>
+</div>
+<form class="form-inline">
+
+  <div class="row" style="padding:15px; padding-top:0px; ">
+    <table class="table  table-condensed table-striped">
+      <tr>
+        <th>编号</th>
+        <th>商品</th>
+        <th>类别</th>
+        <th>个数</th>
+      </tr>
+      <!-- <#list>这个语法是FreeMaker（类似jsp，比jsp好用）提供的，用于数组for循环 -->
+      <#list retList as bean>
+      <tr>
+        <td>${(bean.id)!}</td>
+        <td>${(bean.product)!}</td>
+        <td>${(bean.category)!}</td>
+        <td>${(bean.count)!}</td>
+      </tr>
+    </#list>
+    </table>
+  </div>
+  <div class="row">
+    <div class="col-sm-3 col-sm-offset-4">
+      <a class="btn btn-warning" href="javascript:window.history.back()">返回上一级</a>
+    </div>
+  </div>
+</form>
+</body>
+</html>
